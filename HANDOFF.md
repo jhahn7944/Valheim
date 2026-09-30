@@ -23,12 +23,12 @@ This file records exactly what finished, what didn't, and what to run next.
 | 3 | `Enable setting seasonal Global Keys = true` | Done | Done, verified | Lives in `shudnal.Seasons.cfg`, which persists |
 | 4 | Seasonal raid gating | `custom_raids.raids.cfg` regenerated: 214 raids, 46 vanilla clones, vanilla share 39–42 % every season | **Not uploaded** | 10 archetypes gated to one season (below) |
 | — | Oslo night lengths (40/25/58/72 %), 24-min day | Default settings only | `Day length in seconds = 1440` persisted; night lengths **reverted** | Discord v2.6 post already tells players about Oslo nights |
-| 5 | Integration deep-dive | — | — | Rerun in the cloud session; see `INTEGRATION-REPORT.md` |
+| 5 | Integration deep-dive | — | — | Done in the cloud session: `INTEGRATION-REPORT.md` |
 | 6 | Cold vs Freezing | — | — | Answered below |
 
 Seasonal raid assignment (`raid_seasons.py`): Spring — Downpour · Summer — Stormcalled, StillAir, Daybreak ·
 Fall — MistWalkers, MistShades, DeadAir · Winter — FirstSnow, Darklands, Nightfall. Everything else runs all year.
-`RequiredGlobalKeys` is AND-only, so each archetype can belong to exactly one season.
+The old session believed `RequiredGlobalKeys` was AND-only and limited each archetype to one season. Custom Raids also has `RequireOneOfGlobalKeys` (OR), so two-season raids are possible; see `INTEGRATION-REPORT.md`. Also confirm the key case (`season_winter` vs `Season_Winter`) with `globalkeys` on the server.
 Vanilla-clone batches in `raid_clones.py` were cut to 10/10/5/11/10 to hold the vanilla share near 40 %.
 
 ## Why the Seasons values keep reverting
