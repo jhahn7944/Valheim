@@ -37,11 +37,14 @@ Give the user that answer too.
 
 ## Broken: why the year length and night lengths keep reverting
 
-The user wants the year length confirmed. It is **364 days = 4 seasons × 91 days**, because 365 = 5 × 73 can't
-split into four equal seasons and 364 is the nearest integer that can. Each season is then 91 in-game days,
-36.4 h of play at a 24-minute day, and the full year is 145.6 h.
+**Year length (recommended, confirm with the user): 72 days = 4 seasons × 18 days.**
+This replaces the 364-day year (4 × 91) you started writing. The user decided 364 is too long and asked for 365
+scaled down by a factor like 5. 365 ÷ 5 = 73, and 73 can't split into four equal seasons, so the recommendation
+is 72: the nearest integer to 365/5 that divides by 4. Each season is 18 in-game days, 7.2 h of play at a
+24-minute day, and the full year is 28.8 h. An alternative to offer is **52 days (4 × 13)**, which is 364 ÷ 7
+(one game day per real week), giving 5.2 h per season.
 
-You wrote `daysInSeason: 91` and the Oslo `nightLength` values into
+You wrote `daysInSeason: 91` (now superseded; see above) and the Oslo `nightLength` values into
 `BepInEx/config/shudnal.Seasons/Default settings/*.json`. **Seasons regenerates that folder on every world
 load.** From the README:
 
@@ -61,7 +64,7 @@ to inform the plan.
 
 1. **Seasons overrides (server).** For each of Spring, Summer, Fall and Winter:
    - read `/BepInEx/config/shudnal.Seasons/Default settings/<S>.json`;
-   - set `daysInSeason` = 91 and `nightLength` = Spring 40, Summer 25, Fall 58, Winter 72;
+   - set `daysInSeason` = 18 and `nightLength` = Spring 40, Summer 25, Fall 58, Winter 72;
    - write it to **`/BepInEx/config/shudnal.Seasons/<S>.json`**, the parent folder.
 2. **Seasons overrides (local).** Do the same in the r2modman profile `DogHaus Valheim v2.3`.
 3. **Custom Raids safety.** In the Custom Raids general config, set `StopTouchingMyConfigs = true` explicitly;
@@ -72,7 +75,7 @@ to inform the plan.
 5. **Restart and verify properly.**
    - Wait until the state is `running` **and** `LogOutput.log` shows Seasons initialised, not only "Loading
      [Seasons 1.10.3]".
-   - Re-read the four parent-folder JSONs and confirm 91 d and 40/25/58/72 %.
+   - Re-read the four parent-folder JSONs and confirm 18 d and 40/25/58/72 %.
    - Confirm the terrain mod logs `1.7.0`.
    - The browser tab froze at 19:03; reload the kineticpanel tab first and check it isn't on Discord.
 6. **Check the season key string.** Run `globalkeys` in the server console (Server_devcommands is installed).
@@ -82,7 +85,7 @@ to inform the plan.
    mentions it.
 7. **Repack and announce.** Build the v2.7 CORE/FULL packs (the terrain mod version changed) and post them in
    #mod-updates. Mention:
-   - 364-day year, with 91-day seasons;
+   - 72-day year, with 18-day seasons;
    - seasonal raids;
    - creatures no longer dig when their blow hits a player or building;
    - flyers, ghosts, slimes and small creatures never dig.
@@ -123,7 +126,7 @@ to inform the plan.
   - most weather gives only Cold, mostly at night: Clear, Misty, Rain, SwampRain, Mistlands clear and rain,
     Heath, and Darklands;
   - Freezing comes from `Snow Winter`, `SnowStorm Winter`, `ThunderStorm Winter` and `Mistlands_thunder Winter`.
-- **Real risk:** a winter is about 36 h of play with 72 % nights. A fresh character can face a whole winter before
+- **Real risk:** a winter is about 7.2 h of play at 18-day seasons, with 72 % nights. A fresh character can still face a whole winter before
   silver, so before wolf armour, and before Frost Resistance Mead, which needs Swamp bloodbags.
 - Winter also has benefits: faster stamina regen and extra fire resistance.
 

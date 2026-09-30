@@ -22,7 +22,7 @@ This file records exactly what finished, what didn't, and what to run next.
 | # | Item | Local PC | Server | Notes |
 |---|------|----------|--------|-------|
 | 1 | CreatureTerrainDamage 1.7.0 | Built, deployed to local profile | **Not uploaded** | 16 creatures + `Bat_Swamp` set to 0 depth; ground-snap fix; new `Ground-Only Check Radius (m)` = 2.5 |
-| 2 | 364-day year (4 × 91) | Written to `Default settings` — **will be overwritten** | Written to `Default settings` — **already reverted once** | See "Why the Seasons values keep reverting" |
+| 2 | 72-day year (4 × 18); **changed from 364 (4 × 91)** by the user; confirm before applying | Written to `Default settings` — **will be overwritten** | Written to `Default settings` — **already reverted once** | See "Why the Seasons values keep reverting" |
 | 3 | `Enable setting seasonal Global Keys = true` | Done | Done, verified | Lives in `shudnal.Seasons.cfg`, which persists |
 | 4 | Seasonal raid gating | `custom_raids.raids.cfg` regenerated: 214 raids, 46 vanilla clones, vanilla share 39–42 % every season | **Not uploaded** | 10 archetypes gated to one season (below) |
 | — | Oslo night lengths (40/25/58/72 %), 24-min day | Default settings only | `Day length in seconds = 1440` persisted; night lengths **reverted** | Discord v2.6 post already tells players about Oslo nights |
@@ -51,10 +51,10 @@ defaults (30/15/30/45 %) back.
 ### Fix (run from the PC session, same panel API it already used)
 
 1. Read each `Default settings/{Spring,Summer,Fall,Winter}.json` from the server.
-2. Set `daysInSeason = 91` and `nightLength` = Spring 40, Summer 25, Fall 58, Winter 72.
+2. Set `daysInSeason = 18` and `nightLength` = Spring 40, Summer 25, Fall 58, Winter 72.
 3. Write the result to `/BepInEx/config/shudnal.Seasons/{Season}.json` (the folder **above** `Default settings`).
 4. Restart, wait for `running` **and** for a Seasons line after "Loading [Seasons 1.10.3]" in `LogOutput.log`, then
-   re-read the four root-folder files and confirm 91 d / 40·25·58·72 %.
+   re-read the four root-folder files and confirm 18 d / 40·25·58·72 %.
 5. Do the same in the local r2modman profile so single-player/testing matches.
 6. Any other override (e.g. `Custom environments.json` for the cold changes below) goes in the same root folder.
 
@@ -65,7 +65,7 @@ defaults (30/15/30/45 %) back.
   `Ground-Only Check Radius (m)` entry should be set server-side).
 - The four root-folder Seasons JSONs above.
 - Then rebuild the CORE/FULL packs as v2.7 (terrain mod version changed) and post them to #mod-updates,
-  mentioning: 91-day seasons, seasonal raids, creatures no longer dig when they hit a player or building.
+  mentioning: 18-day seasons (72-day year), seasonal raids, creatures no longer dig when they hit a player or building.
 
 ## Cold vs Freezing — will winter be playable early?
 
@@ -89,8 +89,8 @@ What your server's winter weather actually does (from the local `Custom environm
 - **Freezing**: `Snow Winter`, `SnowStorm Winter`, `ThunderStorm Winter`, `Mistlands_thunder Winter`.
 
 So a pre-silver player in winter spends most of the time merely Cold (slower regen), and gets Freezing during
-snow and storms. The catch on this server specifically: with 72 % winter nights and 91-day seasons, winter is
-~36 real hours of play, most of it dark and Cold. A fresh character can land in a full winter with no frost gear
+snow and storms. The catch on this server specifically: with 72 % winter nights and 18-day seasons, winter is
+~7.2 real hours of play, most of it dark and Cold. A fresh character can land in a full winter with no frost gear
 (Wolf armour needs silver; Lox/Feather capes are later still; Frost Resistance Mead needs Swamp bloodbags).
 
 Early-game tools that already exist:

@@ -158,7 +158,7 @@ Names as listed in the README. Defaults were only given for the first two.
 
 | Setting | Effect |
 |---|---|
-| `daysInSeason` | Season length. Default 10; you set 91. |
+| `daysInSeason` | Season length. Default 10; the plan is now 18 (72-day year; the agent was told 91 before the user changed it). |
 | `nightLength` | Night as a percentage of the day. Default 30; you have it per season. |
 | `plantsGrowthMultiplier` | Crop growth speed. README: "Plants grow slower in fall and stop in winter but grow quickly in spring and summer." |
 | `beehiveProductionMultiplier` | Honey rate. |
@@ -352,7 +352,7 @@ The search blurb says it "makes raid creatures hunt and persist after the HUD [s
 - **Custom Raids must be on all clients and the server.** Since 1.2.0 clients request server configs automatically. A client with different config files gets the server's for that session.
 - **`PauseEventTimersWhileOffline`** defaults to true, which matters for a private server that is often empty.
 - **`StopTouchingMyConfigs`** default conflicts between the wiki (false) and release notes (true since 1.7.10). Set it explicitly, or Custom Raids may rewrite your 214-raid config.
-- **Seasons cannot be changed by sleeping when real-time seasons are on.** With your current setup (91-day seasons), seasons change on the morning of day 1 of the new season.
+- **Seasons cannot be changed by sleeping when real-time seasons are on.** With your current setup (18-day seasons), seasons change on the morning of day 1 of the new season.
 - **Changed Seasons visuals** (map colours, textures) only apply after a season transition.
 - **Custom Raids 1.8.0** added World Advancement Progression support. Not relevant unless you use that mod, but it means the private-keys lookup is server-side.
 - **Community Patch** adds no known conflict with the others, and it is safe if only the server has it.
