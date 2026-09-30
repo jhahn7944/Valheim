@@ -1,5 +1,8 @@
 # DogHaus Valheim — making the mods feel like one game
 
+> **Recommendations only. Verify with the user before making any change.** Nothing here is approved.
+> Present the plan to the user and get an explicit yes before editing, uploading, restarting, or posting anything.
+
 Research pass requested 2026-09-30 ("deep dive of all mod websites, use sub agents, and report back possible ways
 to make all these mods feel more integrated"). Three research agents covered (A) Seasons + raids,
 (B) building/content mods, (C) client-side/QoL mods. Their full reports are appendices A–C below.

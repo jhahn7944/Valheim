@@ -1,5 +1,11 @@
 # Brief for the "Best Valheim mods" chat — resume here
 
+> **⚠ RECOMMENDATIONS ONLY. VERIFY WITH THE USER BEFORE MAKING ANY CHANGE.**
+> Everything below is a recommendation from a cloud session that could not see the PC, the server, or the
+> Thunderstore pages. Do **not** edit, upload, restart, repack, or post anything on the strength of this brief.
+> First present the plan to the user and get an explicit yes for each change, then do it.
+> Where this brief conflicts with what you observe on the PC or server, trust what you observe and tell the user.
+
 Written 2026-09-30 by a cloud session that reviewed your transcript while you were rate-limited.
 You stopped at 19:03 mid-way through pushing Seasons settings. Your context is intact; this brief adds what
 was learned since and gives the remaining work in order. Details: `HANDOFF.md` and `INTEGRATION-REPORT.md` in
@@ -47,7 +53,11 @@ Your 18:39 "survived restart" check was a false positive: it read while the stat
 had loaded. The 19:01 read showed the defaults back. The 19:02 write to `Default settings` followed by a
 restart will revert again.
 
-## Do this, in order
+## Recommended steps, in order (confirm with the user before each one)
+
+Present these steps to the user as a plan. Carry out each one only after the user approves it. The read-only
+checks are the parts of step 5 that re-read files and logs, and step 6's `globalkeys`. They are safe to run first
+to inform the plan.
 
 1. **Seasons overrides (server).** For each of Spring, Summer, Fall and Winter:
    - read `/BepInEx/config/shudnal.Seasons/Default settings/<S>.json`;
@@ -76,14 +86,14 @@ restart will revert again.
    - seasonal raids;
    - creatures no longer dig when their blow hits a player or building;
    - flyers, ghosts, slimes and small creatures never dig.
-8. **Optional improvement (ask the user first).** Custom Raids also has **`RequireOneOfGlobalKeys`** (OR logic).
+8. **Optional improvement.** Custom Raids also has **`RequireOneOfGlobalKeys`** (OR logic).
    The "AND-only, one season per archetype" constraint in `raid_seasons.py` is therefore not real. Two-season
    raids are possible as single raids, e.g. MistWalkers in Fall+Winter, or Stormcalled in Spring+Summer. If
    used, re-measure the vanilla share per season afterwards, as before.
 9. **Report back to the user.** Give the Cold/Freezing answer below, then the top items of
    `INTEGRATION-REPORT.md`.
 
-## Decisions to put to the user
+## Decisions to put to the user (none of these are approved yet)
 
 - **Winter softening.** Options are listed in the Cold/Freezing answer below.
 - **Two-season raids** (step 8).
@@ -98,7 +108,7 @@ restart will revert again.
 - **AzuCraftyBoxes.** Exclude every ship in `Azumatt.AzuCraftyBoxes.yml`; there is a documented item-duplication
   bug with ship storage. This is recommended regardless.
 
-## Answer for the user: Cold vs Freezing in winter
+## Answer for the user: Cold vs Freezing in winter (informational)
 
 | | Health regen | Stamina regen | Damage |
 |---|---|---|---|
@@ -117,7 +127,7 @@ restart will revert again.
   silver, so before wolf armour, and before Frost Resistance Mead, which needs Swamp bloodbags.
 - Winter also has benefits: faster stamina regen and extra fire resistance.
 
-Options to keep winter playable early:
+Recommended options to keep winter playable early. Offer them to the user; change nothing until they choose:
 
 1. **Minimum.** Make sure `torchAsFiresource = true` in `shudnal.Seasons.cfg`. A held torch then counts as a
    fire, at a faster durability drain of 0.1 vs 0.0333.

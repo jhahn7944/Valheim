@@ -1,5 +1,8 @@
 # DogHaus Valheim — handoff from the "Best Valheim mods" session
 
+> **Recommendations only. Verify with the user before making any change.** Nothing here is approved.
+> Present the plan to the user and get an explicit yes before editing, uploading, restarting, or posting anything.
+
 The original session ran on the Windows PC (working files in `S:\Files\Regular\Personal\Valheim`,
 r2modman profile `DogHaus Valheim v2.3`, server on kineticpanel `936968c5`). It stopped at
 19:03 on 2026-09-30 when it hit a usage limit, mid-way through pushing settings to the server.
